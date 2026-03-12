@@ -1,0 +1,25 @@
+name: PDF Isleyici
+on:
+  push:
+    paths:
+      - 'pdfs/**'
+  workflow_dispatch:
+jobs:
+  process-pdfs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pdfplumber google-generativeai
+      - run: python process_pdfs.py
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      - run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add questions.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Soru bankasi guncellendi" && git push)
