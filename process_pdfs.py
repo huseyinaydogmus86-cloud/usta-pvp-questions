@@ -33,7 +33,7 @@ MAX_CHARS = 30000  # Gemini token limiti için
 
 # --- Gemini Kurulum ---
 genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel("gemini-2.0-flash-lite")
+model = genai.GenerativeModel("gemini-1.5-flash")
 
 
 def extract_text_from_pdf(pdf_path: str) -> str:
