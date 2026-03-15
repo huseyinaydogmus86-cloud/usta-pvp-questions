@@ -2,18 +2,14 @@
 """
 PDF → Soru Bankası İşleyici
 Gemini AI ile PDF dosyalarından çoktan seçmeli sorular çıkarır.
+(Yenilenmiş Sürüm: PDF'i doğrudan Gemini'ye yükler, böylece bozuk fontları ve görselleri bile okur!)
 """
 
 import os
 import json
 import glob
 import sys
-
-try:
-    import pdfplumber
-except ImportError:
-    print("pdfplumber yüklü değil. pip install pdfplumber çalıştırın.")
-    sys.exit(1)
+import time
 
 try:
     import google.generativeai as genai
@@ -29,84 +25,84 @@ if not GEMINI_API_KEY:
 
 PDF_FOLDER = "pdfs"
 OUTPUT_FILE = "questions.json"
-MAX_CHARS = 30000  # Gemini token limiti için
 
 # --- Gemini Kurulum ---
 genai.configure(api_key=GEMINI_API_KEY)
+# Yeni, gorsel destekleyen hizli model
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 
-def extract_text_from_pdf(pdf_path: str) -> str:
-    """PDF dosyasından metin çıkarır."""
-    text = ""
+def process_pdf_with_gemini(pdf_path: str, pdf_name: str) -> list:
+    """PDF'i doğrudan Google sunucularına geçici olarak yükleyerek soruları çıkarır."""
+    print(f"  Yukleniyor: {pdf_name} (Bu islem dosya boyutuna gore 1-2 dakika surebilir...)")
+    
     try:
-        with pdfplumber.open(pdf_path) as pdf:
-            for page in pdf.pages:
-                page_text = page.extract_text()
-                if page_text:
-                    text += page_text + "\n"
+        # PDF'i doğrudan yükle
+        uploaded_file = genai.upload_file(path=pdf_path)
     except Exception as e:
-        print(f"  UYARI: {pdf_path} okunamadı: {e}")
-    return text.strip()
-
-
-def parse_questions_with_ai(text: str, pdf_name: str) -> list:
-    """Gemini AI ile metinden soru çıkarır."""
-    if not text or len(text) < 50:
-        print(f"  ATLANDI: {pdf_name} - Yeterli metin yok ({len(text)} karakter).")
+        print(f"  HATA: Dosya yuklenirken hata olustu: {e}")
         return []
 
-    # Çok uzun metni kırp
-    text_to_send = text[:MAX_CHARS] + "\n\n[...metnin geri kalanı kırpıldı...]" if len(text) > MAX_CHARS else text
+    # API'nin dosyayı veritabanında hazır hale getirmesi için biraz bekliyoruz (ÖNEMLİ)
+    time.sleep(8) 
 
-    prompt = f"""Sen bir uzman eğitim asistanısın. Aşağıdaki metin bir sınav/test kitabından alınmıştır.
-Bu metindeki TÜM çoktan seçmeli soruları bul ve çıkar.
+    prompt = f"""Sen bir uzman eğitim asistanısın. Ekte gönderilen bu belge bir deneme sınavından / soru bankasından alınmıştır.
+Lütfen bu PDF dosyasını İyice GÖZDEN GEÇİR (görsel ve metinleri), tüm sayfaları oku ve içindeki BÜTÜN çoktan seçmeli soruları çıkar.
 
 KURALLAR:
-1. Her sorunun "q" (soru metni) alanını bul. Soruyu tam ve anlaşılır şekilde yaz.
-2. Sorunun şıklarını "options" adında bir array olarak çıkar. Sadece 4 veya 5 string olsun (A, B, C, D harfleri OLMADAN).
-3. Doğru cevabı bul ve şıkkın İÇERİĞİNİ "a" alanına yaz.
-4. Her soruya benzersiz bir "id" numarası ver (rastgele büyük sayı, çakışmaları önlemek için).
-5. "source" alanına PDF dosya adını yaz: "{pdf_name}"
-6. Sadece JSON array döndür. Başka hiçbir açıklama yazma!
+1. Her sorunun "q" (soru metni) alanını çıkar. Eğer yazılar resim şeklindeyse kendi gelişmiş okuma yeteneğinle OCR yaparak metne çevir. Soru metnini anlaşılır şekilde yaz.
+2. Sorunun şıklarını "options" adında bir array (liste) olarak çıkar. Şıklarda sadece metin olsun, (A, B, C, D) harflerini Puanlara ekleme, doğrudan şıkkın metnini veya sayısını koy.
+3. Doğru cevabı veya en mantıklı cevabı bulup İÇERİĞİNİ "a" alanına yaz. Eğer bulamıyorsan options'taki A şıkkının içeriğini yazabilirsin. Cevap anahtarı varsa ondan yararlan.
+4. Her soruya benzersiz, rastgele büyük bir "id" numarası (örneğin 1001, 1002, 1003 vb.) ver.
+5. "source" alanına sadece "{pdf_name}" yaz.
+6. SADECE aşağidaki JSON Array formatında dönüş yapmalısın. Geriye hiçbir ekstra metin veya Markdown açıklaması döndürme. SADECE JSON dön.
 
 JSON FORMAT:
 [
   {{
     "id": 1001,
-    "q": "Soru metni buraya...",
-    "options": ["şık1", "şık2", "şık3", "şık4"],
-    "a": "doğru şıkkın içeriği",
+    "q": "Soru metni...",
+    "options": ["cevap 1", "cevap 2", "cevap 3", "cevap 4"],
+    "a": "doğru cevabın kendisi",
     "source": "{pdf_name}"
   }}
 ]
-
-İŞTE METİN:
-{text_to_send}"""
-
+"""
     try:
-        response = model.generate_content(prompt)
+        # Model'e PDF dosyasını ve prompt'u besle
+        response = model.generate_content([uploaded_file, prompt])
         raw = response.text.strip()
 
-        # Markdown code block temizle
+        # Clean markdown code blocks
         if raw.startswith("```json"):
             raw = raw.replace("```json", "", 1).rstrip("`").strip()
         elif raw.startswith("```"):
             raw = raw.lstrip("`").rstrip("`").strip()
 
         questions = json.loads(raw)
+        
+        # Dosyayı Google'ın geçici sunucusundan sil (Temizlik)
+        try:
+            genai.delete_file(uploaded_file.name)
+        except:
+            pass
+
         if not isinstance(questions, list):
-            print(f"  HATA: {pdf_name} - Geçersiz format, liste bekleniyor.")
+            print(f"  HATA: {pdf_name} - Beklenmeyen cevap. JSON Array degil.")
             return []
 
-        print(f"  ✅ {pdf_name}: {len(questions)} soru bulundu.")
+        print(f"  ✅ {pdf_name}: {len(questions)} soru basariyla cikarildi!")
         return questions
 
     except json.JSONDecodeError as e:
-        print(f"  HATA: {pdf_name} - JSON parse hatası: {e}")
+        print(f"  HATA: {pdf_name} - PDF okundu ama AI sorulari bulamadi veya JSON olusturamadi. HATA: {e}")
+        try: genai.delete_file(uploaded_file.name)
+        except: pass
         return []
     except Exception as e:
-        print(f"  HATA: {pdf_name} - Gemini hatası: {e}")
+        print(f"  HATA: {pdf_name} - Gemini yanit verirken hata olustu. Icerik kurallari veya dosya isleme: {e}")
+        try: genai.delete_file(uploaded_file.name)
+        except: pass
         return []
 
 
@@ -157,14 +153,16 @@ def main():
         pdf_name = os.path.basename(pdf_path)
         print(f"📄 İşleniyor: {pdf_name}")
 
-        text = extract_text_from_pdf(pdf_path)
-        questions = parse_questions_with_ai(text, pdf_name)
+        # Gemini Native PDF okuyucu fonksiyonunu çağır
+        questions = process_pdf_with_gemini(pdf_path, pdf_name)
 
-        for q in questions:
-            q["id"] = next_id
-            next_id += 1
-            all_questions.append(q)
+        if questions:
+            for q in questions:
+                q["id"] = next_id
+                next_id += 1
+                all_questions.append(q)
 
+    # Güncellenmiş soruları kaydet (yeni soru eklenmese bile, e.g boş dönerse boş kaydeder)
     save_questions(all_questions)
 
 
