@@ -29,7 +29,7 @@ OUTPUT_FILE = "questions.json"
 # --- Gemini Kurulum ---
 genai.configure(api_key=GEMINI_API_KEY)
 # Yeni, gorsel destekleyen hizli model
-model = genai.GenerativeModel("gemini-2.0-flash")
+model = genai.GenerativeModel("gemini-1.5-flash")
 
 
 def process_pdf_with_gemini(pdf_path: str, pdf_name: str) -> list:
