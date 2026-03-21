@@ -208,5 +208,14 @@
     "options": ["Kanun Yapmak", "Savaş Kararı Almak", "Uluslararası Antlaşmaları Onaylamak", "Yargılama Yapmak"],
     "a": "Yargılama Yapmak",
     "source": "Vatandaslik"
+  },
+  {
+    "id": 31,
+    "q": "Genişliği 1,20 m olan yeşil (20 cm), mor (30 cm) ve kırmızı (40 cm) kenarlı kare peçeteler kesilmektedir. Üç renk kumaştan parça artmadan toplam 1220 adet peçete elde edildiğine göre, bir top kumaşın uzunluğu kaç metredir?",
+    "options": ["18", "20", "22", "24"],
+    "a": "24",
+    "class": "8",
+    "subject": "Matematik",
+    "source": "LGS_2025"
   }
 ]
