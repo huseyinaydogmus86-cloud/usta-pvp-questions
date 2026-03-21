@@ -1,221 +1,626 @@
 [
   {
-    "id": 1,
-    "q": "Eminönü'nden kalkan vapur 15 dakikada Kadıköy'e varıyor. Vapur 14:45'te kalktığına göre saat kaçta Kadıköy'de olur?",
-    "options": ["14:50", "14:55", "15:00", "15:05", "15:10"],
-    "a": "15:00",
-    "source": "LGS_Matematik"
+    "id": 101,
+    "q": "3 + 4 × 2 işleminin sonucu kaçtır?",
+    "options": [
+      "11",
+      "14",
+      "10",
+      "7"
+    ],
+    "a": "11",
+    "class": "5",
+    "subject": "Matematik",
+    "source": "5_Matematik"
   },
   {
-    "id": 2,
-    "q": "Bir üçgenin iç açıları toplamı kaç derecedir?",
-    "options": ["90", "180", "270", "360"],
-    "a": "180",
-    "source": "LGS_Matematik"
+    "id": 102,
+    "q": "Bir dikdörtgenin uzun kenarı 8 cm, kısa kenarı 5 cm ise çevresi kaç cm'dir?",
+    "options": [
+      "24",
+      "26",
+      "28",
+      "40"
+    ],
+    "a": "26",
+    "class": "5",
+    "subject": "Matematik",
+    "source": "5_Matematik"
   },
   {
-    "id": 3,
-    "q": "Karekökü 16 olan sayının yarısı kaçtır?",
-    "options": ["4", "8", "32", "128"],
-    "a": "128",
-    "source": "LGS_Matematik"
-  },
-  {
-    "id": 4,
-    "q": "Türkiye'nin başkenti neresidir?",
-    "options": ["İstanbul", "İzmir", "Ankara", "Bursa"],
+    "id": 103,
+    "q": "Türkiye'nin başkenti hangi şehirdir?",
+    "options": [
+      "İstanbul",
+      "İzmir",
+      "Ankara",
+      "Bursa"
+    ],
     "a": "Ankara",
-    "source": "GenelKultur"
+    "class": "5",
+    "subject": "Sosyal Bilgiler",
+    "source": "5_Sosyal"
   },
   {
-    "id": 5,
-    "q": "Aşağıdaki gezegenlerden hangisi Güneş'e en yakındır?",
-    "options": ["Venüs", "Dünya", "Merkür", "Mars"],
-    "a": "Merkür",
-    "source": "Fen"
+    "id": 104,
+    "q": "Güneş sisteminin merkezinde ne bulunmaktadır?",
+    "options": [
+      "Dünya",
+      "Ay",
+      "Mars",
+      "Güneş"
+    ],
+    "a": "Güneş",
+    "class": "5",
+    "subject": "Fen Bilimleri",
+    "source": "5_Fen"
   },
   {
-    "id": 6,
-    "q": "x² - 9 = 0 denkleminin kökleri çarpımı kaçtır?",
-    "options": ["-9", "-3", "0", "3", "9"],
-    "a": "-9",
-    "source": "YKS_Matematik"
-  },
-  {
-    "id": 7,
-    "q": "f(x) = 2x + 5 fonksiyonunun tersi aşağıdakilerden hangisidir?",
-    "options": ["(x+5)/2", "(x-5)/2", "2x-5", "5x-2", "(x/2)-5"],
-    "a": "(x-5)/2",
-    "source": "YKS_Matematik"
-  },
-  {
-    "id": 8,
-    "q": "log₂(8) ifadesinin değeri kaçtır?",
-    "options": ["1", "2", "3", "4", "8"],
-    "a": "3",
-    "source": "YKS_Matematik"
-  },
-  {
-    "id": 9,
-    "q": "Dik kenar uzunlukları 3 cm ve 4 cm olan dik üçgenin hipotenüsü kaç cm'dir?",
-    "options": ["5", "6", "7", "8", "10"],
-    "a": "5",
-    "source": "Geometri"
-  },
-  {
-    "id": 10,
-    "q": "Hangi sayının 3 katının 5 eksiği 16'dır?",
-    "options": ["5", "6", "7", "8", "9"],
-    "a": "7",
-    "source": "LGS_Matematik"
-  },
-  {
-    "id": 11,
-    "q": "Kurtuluş Savaşı'nı başlatan olay olarak kabul edilen Atatürk'ün Samsun'a çıkışı hangi tarihtir?",
-    "options": ["23 Nisan 1920", "19 Mayıs 1919", "29 Ekim 1923", "30 Ağustos 1922"],
-    "a": "19 Mayıs 1919",
-    "source": "Tarih"
-  },
-  {
-    "id": 12,
-    "q": "Osmanlı Devleti'nin kurucusu kimdir?",
-    "options": ["Ertuğrul Gazi", "Osman Bey", "Orhan Bey", "Fatih Sultan Mehmet"],
-    "a": "Osman Bey",
-    "source": "Tarih"
-  },
-  {
-    "id": 13,
-    "q": "Cumhuriyet kaç yılında ilan edilmiştir?",
-    "options": ["1920", "1921", "1922", "1923", "1924"],
-    "a": "1923",
-    "source": "Tarih"
-  },
-  {
-    "id": 14,
-    "q": "Aşağıdakilerden hangisi İstanbul'un fethinin dünya tarihi açısından sonuçlarından biridir?",
-    "options": ["Rönesans'ın başlaması", "Orta Çağ'ın kapanıp Yeni Çağ'ın başlaması", "Osmanlı'nın imparatorluk olması", "Bizans'ın yıkılması"],
-    "a": "Orta Çağ'ın kapanıp Yeni Çağ'ın başlaması",
-    "source": "Tarih"
-  },
-  {
-    "id": 15,
-    "q": "İstiklal Marşı'mızın şairi kimdir?",
-    "options": ["Namık Kemal", "Tevfik Fikret", "Mehmet Akif Ersoy", "Yahya Kemal Beyatlı"],
-    "a": "Mehmet Akif Ersoy",
-    "source": "Edebiyat"
-  },
-  {
-    "id": 16,
-    "q": "Su molekülünün kimyasal formülü nedir?",
-    "options": ["CO2", "H2O", "O2", "NaCl", "CH4"],
-    "a": "H2O",
-    "source": "Kimya"
-  },
-  {
-    "id": 17,
-    "q": "Aşağıdakilerden hangisi bir asal sayı değildir?",
-    "options": ["2", "7", "11", "15", "23"],
-    "a": "15",
-    "source": "Matematik"
-  },
-  {
-    "id": 18,
-    "q": "İnsan vücudundaki en uzun kemik aşağıdakilerden hangisidir?",
-    "options": ["Kaval", "Uyluk (Femur)", "Pazı", "Kafatası"],
-    "a": "Uyluk (Femur)",
-    "source": "Biyoloji"
-  },
-  {
-    "id": 19,
-    "q": "Türkiye'nin en yüksek dağı hangisidir?",
-    "options": ["Erciyes", "Palandöken", "Uludağ", "Ağrı Dağı"],
-    "a": "Ağrı Dağı",
-    "source": "Cografya"
-  },
-  {
-    "id": 20,
-    "q": "Hangi bölgede çay tarımı yaygın olarak yapılmaktadır?",
-    "options": ["Ege", "Akdeniz", "Karadeniz", "Marmara"],
-    "a": "Karadeniz",
-    "source": "Cografya"
-  },
-  {
-    "id": 21,
-    "q": "'Mona Lisa' tablosu hangi ressama aittir?",
-    "options": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"],
-    "a": "Leonardo da Vinci",
-    "source": "GenelKultur"
-  },
-  {
-    "id": 22,
-    "q": "Sürtünme kuvveti kinetik enerji üzerinde nasıl bir etki yapar?",
-    "options": ["Enerjiyi sıfırlar", "Pansiyel enerjiye çevirir", "Isı enerjisine dönüştürür", "Enerjiyi artırır"],
-    "a": "Isı enerjisine dönüştürür",
-    "source": "Fizik"
-  },
-  {
-    "id": 23,
-    "q": "DNA'nın yapısındaki şeker nedir?",
-    "options": ["Riboz", "Deoksiriboz", "Glikoz", "Fruktoz"],
-    "a": "Deoksiriboz",
-    "source": "Biyoloji"
-  },
-  {
-    "id": 24,
-    "q": "Aşağıdakilerden hangisi Newton'un hareket yasalarından biri değildir?",
-    "options": ["Eylemsizlik Prensibi", "Dinamometre İlkesi", "Dinamik İlkesi", "Etki - Tepki Prensibi"],
-    "a": "Dinamometre İlkesi",
-    "source": "Fizik"
-  },
-  {
-    "id": 25,
-    "q": "Bir sayının %20'si 40 ise, bu sayı kaçtır?",
-    "options": ["100", "150", "200", "400"],
-    "a": "200",
-    "source": "Matematik"
-  },
-  {
-    "id": 26,
-    "q": "'Dokuzuncu Hariciye Koğuşu' adlı eserin yazarı kimdir?",
-    "options": ["Peyami Safa", "Orhan Veli", "Reşat Nuri", "Sait Faik"],
-    "a": "Peyami Safa",
-    "source": "Edebiyat"
-  },
-  {
-    "id": 27,
-    "q": "Hangisi bir giriş birimi (İnput) donanımıdır?",
-    "options": ["Monitör", "Klavye", "Yazıcı", "Hoparlör"],
+    "id": 105,
+    "q": "Hangisi bir giriş donanımıdır?",
+    "options": [
+      "Monitör",
+      "Yazıcı",
+      "Klavye",
+      "Hoparlör"
+    ],
     "a": "Klavye",
-    "source": "Bilisim"
+    "class": "5",
+    "subject": "Bilişim",
+    "source": "5_Bilisim"
   },
   {
-    "id": 28,
-    "q": "Bir haftada kaç saat vardır?",
-    "options": ["120", "144", "168", "210"],
-    "a": "168",
-    "source": "Matematik"
+    "id": 201,
+    "q": "Bir sayının 3 katından 9 çıkarılınca 15 elde ediliyor. Bu sayı kaçtır?",
+    "options": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "a": "8",
+    "class": "6",
+    "subject": "Matematik",
+    "source": "6_Matematik"
   },
   {
-    "id": 29,
-    "q": "Hangisi ülkemizde yetişen bir turunçgil türü değildir?",
-    "options": ["Mandalina", "Portakal", "Ejder Meyvesi", "Greyfurt"],
-    "a": "Ejder Meyvesi",
-    "source": "GenelKultur"
+    "id": 202,
+    "q": "Aşağıdakilerden hangisi bir asal sayıdır?",
+    "options": [
+      "9",
+      "15",
+      "21",
+      "17"
+    ],
+    "a": "17",
+    "class": "6",
+    "subject": "Matematik",
+    "source": "6_Matematik"
   },
   {
-    "id": 30,
-    "q": "Aşağıdakilerden hangisi TBMM'nin görevlerinden biri değildir?",
-    "options": ["Kanun Yapmak", "Savaş Kararı Almak", "Uluslararası Antlaşmaları Onaylamak", "Yargılama Yapmak"],
-    "a": "Yargılama Yapmak",
-    "source": "Vatandaslik"
+    "id": 203,
+    "q": "Hangisi yenilenebilir enerji kaynağıdır?",
+    "options": [
+      "Petrol",
+      "Doğal gaz",
+      "Kömür",
+      "Güneş enerjisi"
+    ],
+    "a": "Güneş enerjisi",
+    "class": "6",
+    "subject": "Fen Bilimleri",
+    "source": "6_Fen"
   },
   {
-    "id": 31,
-    "q": "Genişliği 1,20 m olan yeşil (20 cm), mor (30 cm) ve kırmızı (40 cm) kenarlı kare peçeteler kesilmektedir. Üç renk kumaştan parça artmadan toplam 1220 adet peçete elde edildiğine göre, bir top kumaşın uzunluğu kaç metredir?",
-    "options": ["18", "20", "22", "24"],
+    "id": 204,
+    "q": "Karadeniz Bölgesi'nin en önemli tarım ürünü hangisidir?",
+    "options": [
+      "Pamuk",
+      "Zeytin",
+      "Çay",
+      "Tahıl"
+    ],
+    "a": "Çay",
+    "class": "6",
+    "subject": "Sosyal Bilgiler",
+    "source": "6_Sosyal"
+  },
+  {
+    "id": 205,
+    "q": "'Kalem' kelimesinin çoğulu aşağıdakilerden hangisidir?",
+    "options": [
+      "Kalemler",
+      "Kalemlar",
+      "Kalemli",
+      "Kalemsiz"
+    ],
+    "a": "Kalemler",
+    "class": "6",
+    "subject": "Türkçe",
+    "source": "6_Turkce"
+  },
+  {
+    "id": 301,
+    "q": "Bir sayının %20'si 40 ise bu sayı kaçtır?",
+    "options": [
+      "150",
+      "200",
+      "250",
+      "180"
+    ],
+    "a": "200",
+    "class": "7",
+    "subject": "Matematik",
+    "source": "7_Matematik"
+  },
+  {
+    "id": 302,
+    "q": "Fotosentezin gerçekleştiği organel hangisidir?",
+    "options": [
+      "Mitokondri",
+      "Ribozom",
+      "Kloroplast",
+      "Çekirdek"
+    ],
+    "a": "Kloroplast",
+    "class": "7",
+    "subject": "Fen Bilimleri",
+    "source": "7_Fen"
+  },
+  {
+    "id": 303,
+    "q": "Osmanlı Devleti'nin kurucusu kimdir?",
+    "options": [
+      "Ertuğrul Gazi",
+      "Osman Bey",
+      "Orhan Bey",
+      "Fatih Sultan Mehmet"
+    ],
+    "a": "Osman Bey",
+    "class": "7",
+    "subject": "Sosyal Bilgiler",
+    "source": "7_Sosyal"
+  },
+  {
+    "id": 304,
+    "q": "Aşağıdakilerden hangisi sıfat tamlamasıdır?",
+    "options": [
+      "Ahmet'in kalemi",
+      "Kırmızı araba",
+      "Hızlı koşmak",
+      "Güzel okudu"
+    ],
+    "a": "Kırmızı araba",
+    "class": "7",
+    "subject": "Türkçe",
+    "source": "7_Turkce"
+  },
+  {
+    "id": 305,
+    "q": "'What time is it?' sorusuna hangisi doğru yanıttır?",
+    "options": [
+      "It is Monday.",
+      "It is 3 o'clock.",
+      "It is sunny.",
+      "It is January."
+    ],
+    "a": "It is 3 o'clock.",
+    "class": "7",
+    "subject": "İngilizce",
+    "source": "7_Ingilizce"
+  },
+  {
+    "id": 411,
+    "q": "Eşit uzunluktaki yeşil, mor ve kırmızı renkli üç top kumaşın her birinin genişliği 1,20 m'dir. Bu kumaşlardan kenar uzunlukları sırasıyla 20 cm, 30 cm ve 40 cm olan kare şeklinde peçeteler elde edilmiştir. Üç renk kumaştan parça artmadan toplam 1220 adet peçete elde edildiğine göre, bir top kumaşın uzunluğu kaç metredir?",
+    "imageUrl": "/images/lgs_diyagram.png",
+    "options": [
+      "18",
+      "20",
+      "22",
+      "24"
+    ],
     "a": "24",
     "class": "8",
     "subject": "Matematik",
     "source": "LGS_2025"
+  },
+  {
+    "id": 501,
+    "q": "sin(30°) değeri kaçtır?",
+    "options": [
+      "1/4",
+      "1/2",
+      "√2/2",
+      "√3/2",
+      "1"
+    ],
+    "a": "1/2",
+    "class": "9",
+    "subject": "Matematik",
+    "source": "9_Matematik"
+  },
+  {
+    "id": 502,
+    "q": "Sürtünme kuvveti kinetik enerjiyi neye dönüştürür?",
+    "options": [
+      "Potansiyel enerjiye",
+      "Işık enerjisine",
+      "Isı enerjisine",
+      "Ses enerjisine",
+      "Kimyasal enerjiye"
+    ],
+    "a": "Isı enerjisine",
+    "class": "9",
+    "subject": "Fizik",
+    "source": "9_Fizik"
+  },
+  {
+    "id": 503,
+    "q": "Su molekülünün kimyasal formülü nedir?",
+    "options": [
+      "CO₂",
+      "H₂O",
+      "O₂",
+      "NaCl",
+      "CH₄"
+    ],
+    "a": "H₂O",
+    "class": "9",
+    "subject": "Kimya",
+    "source": "9_Kimya"
+  },
+  {
+    "id": 504,
+    "q": "Prokaryot hücre ile ökaryot hücre arasındaki temel fark nedir?",
+    "options": [
+      "Hücre duvarı",
+      "Zarlı çekirdek",
+      "Ribozom",
+      "Hücre zarı",
+      "Sitoplazma"
+    ],
+    "a": "Zarlı çekirdek",
+    "class": "9",
+    "subject": "Biyoloji",
+    "source": "9_Biyoloji"
+  },
+  {
+    "id": 505,
+    "q": "İstanbul'un fethinin gerçekleştiği yıl hangisidir?",
+    "options": [
+      "1299",
+      "1453",
+      "1492",
+      "1683",
+      "1923"
+    ],
+    "a": "1453",
+    "class": "9",
+    "subject": "Tarih",
+    "source": "9_Tarih"
+  },
+  {
+    "id": 601,
+    "q": "İkinci dereceden ax² + bx + c = 0 denkleminin diskriminantı (Δ) neye eşittir?",
+    "options": [
+      "b² - 4ac",
+      "b² + 4ac",
+      "-b² + 4ac",
+      "4ac - b",
+      "b - 4ac"
+    ],
+    "a": "b² - 4ac",
+    "class": "10",
+    "subject": "Matematik",
+    "source": "10_Matematik"
+  },
+  {
+    "id": 602,
+    "q": "Ohm kanununa göre V = I × R formülünde V neyi temsil eder?",
+    "options": [
+      "Akım",
+      "Direnç",
+      "Gerilim",
+      "Güç",
+      "Enerji"
+    ],
+    "a": "Gerilim",
+    "class": "10",
+    "subject": "Fizik",
+    "source": "10_Fizik"
+  },
+  {
+    "id": 603,
+    "q": "DNA'nın yapısındaki şeker nedir?",
+    "options": [
+      "Riboz",
+      "Deoksiriboz",
+      "Glikoz",
+      "Fruktoz",
+      "Sükroz"
+    ],
+    "a": "Deoksiriboz",
+    "class": "10",
+    "subject": "Biyoloji",
+    "source": "10_Biyoloji"
+  },
+  {
+    "id": 604,
+    "q": "Türkiye'nin en yüksek dağı hangisidir?",
+    "options": [
+      "Erciyes",
+      "Palandöken",
+      "Uludağ",
+      "Ağrı Dağı",
+      "Süphan Dağı"
+    ],
+    "a": "Ağrı Dağı",
+    "class": "10",
+    "subject": "Coğrafya",
+    "source": "10_Cografya"
+  },
+  {
+    "id": 605,
+    "q": "Fransız İhtilali kaçıncı yüzyılda gerçekleşmiştir?",
+    "options": [
+      "16. yüzyıl",
+      "17. yüzyıl",
+      "18. yüzyıl",
+      "19. yüzyıl",
+      "20. yüzyıl"
+    ],
+    "a": "18. yüzyıl",
+    "class": "10",
+    "subject": "Tarih",
+    "source": "10_Tarih"
+  },
+  {
+    "id": 701,
+    "q": "log₂(8) ifadesinin değeri kaçtır?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "a": "3",
+    "class": "11",
+    "subject": "Matematik",
+    "source": "11_Matematik"
+  },
+  {
+    "id": 702,
+    "q": "Asit ve baz reaksiyonu sonucunda ne oluşur?",
+    "options": [
+      "Oksit ve gaz",
+      "Tuz ve su",
+      "Metal ve su",
+      "Asit ve su",
+      "Sadece gaz"
+    ],
+    "a": "Tuz ve su",
+    "class": "11",
+    "subject": "Kimya",
+    "source": "11_Kimya"
+  },
+  {
+    "id": 703,
+    "q": "Mitoz bölünme sonucunda kaç hücre oluşur?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "a": "2",
+    "class": "11",
+    "subject": "Biyoloji",
+    "source": "11_Biyoloji"
+  },
+  {
+    "id": 704,
+    "q": "'Çalıkuşu' romanı kimin eseridir?",
+    "options": [
+      "Halide Edib",
+      "Yakup Kadri",
+      "Reşat Nuri Güntekin",
+      "Peyami Safa",
+      "Ömer Seyfettin"
+    ],
+    "a": "Reşat Nuri Güntekin",
+    "class": "11",
+    "subject": "Türk Dili ve Edebiyatı",
+    "source": "11_Edebiyat"
+  },
+  {
+    "id": 705,
+    "q": "Birinci Dünya Savaşı hangi yılda başlamıştır?",
+    "options": [
+      "1912",
+      "1914",
+      "1918",
+      "1920",
+      "1923"
+    ],
+    "a": "1914",
+    "class": "11",
+    "subject": "Tarih",
+    "source": "11_Tarih"
+  },
+  {
+    "id": 801,
+    "q": "x² - 9 = 0 denkleminin kökleri çarpımı kaçtır?",
+    "options": [
+      "-9",
+      "-3",
+      "0",
+      "9",
+      "3"
+    ],
+    "a": "-9",
+    "class": "12",
+    "subject": "Matematik",
+    "source": "12_Matematik"
+  },
+  {
+    "id": 802,
+    "q": "Bir cismin ivmesi sabit kalırken kütlesi iki katına çıkarılırsa kuvvet nasıl değişir?",
+    "options": [
+      "Değişmez",
+      "Yarıya düşer",
+      "İki katına çıkar",
+      "Dört katına çıkar",
+      "Sıfır olur"
+    ],
+    "a": "İki katına çıkar",
+    "class": "12",
+    "subject": "Fizik",
+    "source": "12_Fizik"
+  },
+  {
+    "id": 803,
+    "q": "İkinci Dünya Savaşı kaçıncı yılda sona ermiştir?",
+    "options": [
+      "1943",
+      "1944",
+      "1945",
+      "1946",
+      "1950"
+    ],
+    "a": "1945",
+    "class": "12",
+    "subject": "Tarih",
+    "source": "12_Tarih"
+  },
+  {
+    "id": 804,
+    "q": "Türk edebiyatında Servet-i Fünun akımının öncüsü kimdir?",
+    "options": [
+      "Namık Kemal",
+      "Tevfik Fikret",
+      "Ziya Paşa",
+      "Şinasi",
+      "Mehmet Rauf"
+    ],
+    "a": "Tevfik Fikret",
+    "class": "12",
+    "subject": "Türk Dili ve Edebiyatı",
+    "source": "12_Edebiyat"
+  },
+  {
+    "id": 805,
+    "q": "Aşağıdakilerden hangisi organik kimya kapsamındadır?",
+    "options": [
+      "NaCl",
+      "H₂O",
+      "CH₄",
+      "HCl",
+      "CO₂"
+    ],
+    "a": "CH₄",
+    "class": "12",
+    "subject": "Kimya",
+    "source": "12_Kimya"
+  },
+  {
+    "id": 901,
+    "q": "Türkiye Büyük Millet Meclisi kaç yılında açılmıştır?",
+    "options": [
+      "1919",
+      "1920",
+      "1921",
+      "1922",
+      "1923"
+    ],
+    "a": "1920",
+    "class": "kpss",
+    "subject": "Tarih",
+    "source": "KPSS_Tarih"
+  },
+  {
+    "id": 902,
+    "q": "Türkiye'nin yüzölçümü yaklaşık kaç km²'dir?",
+    "options": [
+      "580.000",
+      "680.000",
+      "781.000",
+      "880.000",
+      "980.000"
+    ],
+    "a": "781.000",
+    "class": "kpss",
+    "subject": "Coğrafya",
+    "source": "KPSS_Cografya"
+  },
+  {
+    "id": 903,
+    "q": "Milli Mücadele döneminde imzalanan ilk antlaşma hangisidir?",
+    "options": [
+      "Lozan",
+      "Mudanya",
+      "Sevr",
+      "Gümrü",
+      "Moskova"
+    ],
+    "a": "Gümrü",
+    "class": "kpss",
+    "subject": "Tarih",
+    "source": "KPSS_Tarih"
+  },
+  {
+    "id": 904,
+    "q": "Aşağıdakilerden hangisi Türk dilinde yardımcı eylemdir?",
+    "options": [
+      "Gitmek",
+      "Olmak",
+      "Sevmek",
+      "Yazmak",
+      "Okumak"
+    ],
+    "a": "Olmak",
+    "class": "kpss",
+    "subject": "Türkçe",
+    "source": "KPSS_Turkce"
+  },
+  {
+    "id": 905,
+    "q": "Mona Lisa tablosu hangi ülkenin müzesinde sergilenmektedir?",
+    "options": [
+      "İtalya",
+      "İngiltere",
+      "Fransa",
+      "İspanya",
+      "Almanya"
+    ],
+    "a": "Fransa",
+    "class": "kpss",
+    "subject": "Genel Kültür",
+    "source": "KPSS_Kultur"
+  },
+  {
+    "id": 19,
+    "q": "Aşağıda verilen alanlardan hangisinde sel ve taşkınların görülme ihtimali daha azdır?",
+    "options": [
+      "Amazon Havzası",
+      "Endonezya çevresi",
+      "Doğu Avustralya",
+      "Kuzey Afrika",
+      "Hindistan çevresi"
+    ],
+    "a": "Kuzey Afrika"
+  },
+  {
+    "id": 22,
+    "q": "Aşağıdaki çöllerden hangisi Güney Yarım Küre'de yer alır?",
+    "options": [
+      "Karakum",
+      "Arizona",
+      "Sahra",
+      "Namib",
+      "Tar"
+    ],
+    "a": "Namib"
   }
 ]
